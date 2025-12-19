@@ -11,14 +11,14 @@
       font-family: 'Lora', serif;
       background: #f6f1e9;
       margin: 0;
-      padding: 20px 10px;
+      padding: 20px;
       display: flex;
       justify-content: center;
     }
 
     .biodata-container {
       width: 100%;
-      max-width: 380px;
+      max-width: 800px;
       background: #fff;
       border: 2px solid #7a1f1f;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
@@ -34,7 +34,7 @@
 
     .header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 32px;
       color: #7a1f1f;
       font-weight: 700;
     }
@@ -43,7 +43,7 @@
       margin: 6px 0 0;
       font-style: italic;
       color: #6a5a3c;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .section {
@@ -64,35 +64,47 @@
 
     .details-grid {
       display: grid;
-      grid-template-columns: max-content 1fr;
-      row-gap: 8px;
-      column-gap: 12px;
-      font-size: 15px;
-      color: #3a2f2f;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+    }
+
+    .details-grid > div {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .details-grid .label {
       font-weight: 600;
-      white-space: nowrap;
+      color: #3a2f2f;
+      min-width: 150px; /* ensures alignment */
+      margin-right: 10px;
+      flex-shrink: 0;
     }
 
     .details-grid .value {
+      color: #3a2f2f;
+      flex-grow: 1;
+      text-align: left;
       word-wrap: break-word;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 400px) {
-      .biodata-container {
-        max-width: 100%;
-      }
-
+    /* Responsive tweaks for mobile */
+    @media (max-width: 600px) {
       .details-grid {
         grid-template-columns: 1fr;
       }
 
       .details-grid .label {
-        white-space: normal;
-        margin-bottom: 2px;
+        min-width: 120px; /* smaller for mobile */
+      }
+
+      .header h1 {
+        font-size: 26px;
+      }
+
+      .header p {
+        font-size: 14px;
       }
     }
   </style>
@@ -108,100 +120,58 @@
     <div class="section">
       <div class="section-header">Personal Details</div>
       <div class="details-grid">
-        <div class="label">Full Name</div>
-        <div class="value">Akash Raj Gupta</div>
-
-        <div class="label">Date of Birth</div>
-        <div class="value">30th April, 1997</div>
-
-        <div class="label">Age</div>
-        <div class="value">28 Years</div>
-
-        <div class="label">Place of Birth</div>
-        <div class="value">Jagadalpur, Odisa</div>
-
-        <div class="label">Height</div>
-        <div class="value">5 Feet 11 Inches</div>
-
-        <div class="label">Religion</div>
-        <div class="value">Hindu</div>
-
-        <div class="label">Caste</div>
-        <div class="value">Shoundik</div>
-
-        <div class="label">Gotra</div>
-        <div class="value">Kashyap</div>
-
-        <div class="label">Manglik</div>
-        <div class="value">No</div>
+        <div><div class="label">Full Name</div><div class="value">Akash Raj Gupta</div></div>
+        <div><div class="label">Date of Birth</div><div class="value">30th April, 1997</div></div>
+        <div><div class="label">Age</div><div class="value">28 Years</div></div>
+        <div><div class="label">Place of Birth</div><div class="value">Jagadalpur, Odisa</div></div>
+        <div><div class="label">Height</div><div class="value">5 Feet 11 Inches</div></div>
+        <div><div class="label">Religion</div><div class="value">Hindu</div></div>
+        <div><div class="label">Caste</div><div class="value">Shoundik</div></div>
+        <div><div class="label">Gotra</div><div class="value">Kashyap</div></div>
+        <div><div class="label">Manglik</div><div class="value">No</div></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-header">Education & Profession</div>
       <div class="details-grid">
-        <div class="label">Education</div>
-        <div class="value">B.Tech and MBA (Human Resources & Finance)</div>
-
-        <div class="label">Former Employment</div>
-        <div class="value">Computershare, Noida</div>
-
-        <div class="label">Professional Background</div>
-        <div class="value">Business</div>
-
-        <div class="label">Current Occupation</div>
-        <div class="value">Businessman</div>
-
-        <div class="label">Company / Organization</div>
-        <div class="value">Self-employed (Akash Steel Corporation)</div>
-
-        <div class="label">Work Location</div>
-        <div class="value">Chianki, Daltonganj</div>
+        <div><div class="label">Education</div><div class="value">B.Tech and MBA (Human Resources & Finance)</div></div>
+        <div><div class="label">Former Employment</div><div class="value">Computershare, Noida</div></div>
+        <div><div class="label">Professional Background</div><div class="value">Business</div></div>
+        <div><div class="label">Current Occupation</div><div class="value">Businessman</div></div>
+        <div><div class="label">Company / Organization</div><div class="value">Self-employed (Akash Steel Corporation)</div></div>
+        <div><div class="label">Work Location</div><div class="value">Chianki, Daltonganj</div></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-header">Family Details</div>
       <div class="details-grid">
-        <div class="label">Father’s Name</div>
-        <div class="value">Binod Prasad Gupta</div>
-
-        <div class="label">Father’s Occupation</div>
-        <div class="value">Businessman</div>
-
-        <div class="label">Mother’s Name</div>
-        <div class="value">Renu Gupta</div>
-
-        <div class="label">Mother’s Occupation</div>
-        <div class="value">Home Maker</div>
-
-        <div class="label">Siblings</div>
-        <div class="value">Younger Sister: Vidyalaxmi Gupta (Married to Aman Kumar, Software Engineer, Bangalore)<br />Younger Brother: Prithvi Raj Gupta (GST Officer, Guwahati)</div>
-
-        <div class="label">Family Type</div>
-        <div class="value">Nuclear</div>
+        <div><div class="label">Father’s Name</div><div class="value">Binod Prasad Gupta</div></div>
+        <div><div class="label">Father’s Occupation</div><div class="value">Businessman</div></div>
+        <div><div class="label">Mother’s Name</div><div class="value">Renu Gupta</div></div>
+        <div><div class="label">Mother’s Occupation</div><div class="value">Home Maker</div></div>
+        <div><div class="label">Siblings</div>
+          <div class="value">Younger Sister: Vidyalaxmi Gupta (Married to Aman Kumar, Software Engineer, Bangalore)<br>
+            Younger Brother: Prithvi Raj Gupta (GST Officer, Guwahati)</div>
+        </div>
+        <div><div class="label">Family Type</div><div class="value">Nuclear</div></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-header">Lifestyle & Other Details</div>
       <div class="details-grid">
-        <div class="label">Diet</div>
-        <div class="value">Non-Vegetarian</div>
-
-        <div class="label">Hobbies / Interests</div>
-        <div class="value">Travelling</div>
+        <div><div class="label">Diet</div><div class="value">Non-Vegetarian</div></div>
+        <div><div class="label">Hobbies / Interests</div><div class="value">Travelling</div></div>
       </div>
     </div>
 
     <div class="section">
       <div class="section-header">Contact Details</div>
       <div class="details-grid">
-        <div class="label">Phone Number</div>
-        <div class="value">9304783922 / 9905263267</div>
-
-        <div class="label">Address</div>
-        <div class="value">Chianki, Daltonganj</div>
+        <div><div class="label">Phone Number</div><div class="value">9304783922 / 9905263267</div></div>
+        <div><div class="label">Address</div><div class="value">Chianki, Daltonganj</div></div>
       </div>
     </div>
   </div>
